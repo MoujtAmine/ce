@@ -1,19 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+//import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+//import {getAllStudents} from './app/services/StudentService';
+import Routes from './app/routes/Routes';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
-}
+export default class App extends Component {
+  constructor(props) {
+    super(props);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    this.state = {
+      data: [],
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    /*getAllStudents()
+    .then(response => {
+      this.setState({data : response, isLoading : false});
+      console.log("state", state)
+    }).catch(error => {
+      console.log("error", error);
+    });*/
+  }
+
+  render() {
+    //const { data, isLoading } = this.state;
+    return (
+      <Routes />
+    );
+  }
+};
